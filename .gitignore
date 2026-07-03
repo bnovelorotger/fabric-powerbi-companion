@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Local config and secrets
+.env
+.env.*
+config/*.local.yaml
+config/*.secrets.yaml
+secrets/
+
+# Codex and auth state
+.codex_tmp/
+.fab-home/
+auth.json
+cache.bin
+
+# Power BI and Fabric working outputs
+output/
+artifacts/tmp/
+projects/*/artifacts/live_export/
+projects/*/logs/*.local.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temp and large scratch folders
+tmp/
+tmp_*/
+_tmp_*/
+*.bak
+*.tmp

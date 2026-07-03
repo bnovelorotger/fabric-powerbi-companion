@@ -1,0 +1,13 @@
+validation_tests:
+  - name: dimension_key_uniqueness
+    scope: relationship
+    description: Confirm the dimension side of a one-to-many relationship is unique.
+    severity: high
+  - name: measure_compilation
+    scope: measure
+    description: Confirm all created measures compile without semantic errors.
+    severity: high
+  - name: no_many_to_many_without_note
+    scope: relationship
+    description: Any many-to-many relationship must include documented justification.
+    severity: medium

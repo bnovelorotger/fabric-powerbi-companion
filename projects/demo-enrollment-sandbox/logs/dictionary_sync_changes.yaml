@@ -1,0 +1,42 @@
+summary: Synchronized local snapshot for demo_enrollment_sandbox_model into the governed
+  dictionary.
+changes:
+- object_type: table
+  object_name: dim_program_demo
+  change_type: new_object
+  description: Local table added to the governed dictionary.
+  impact: available_for_future_reuse
+  validation_status: pending_confirmation
+- object_type: table
+  object_name: fact_enrollment_demo
+  change_type: new_object
+  description: Local table added to the governed dictionary.
+  impact: available_for_future_reuse
+  validation_status: pending_confirmation
+- object_type: measure
+  object_name: Total Enrollments
+  change_type: new_object
+  description: Local measure added to the governed dictionary.
+  impact: available_for_future_reuse
+  validation_status: pending_confirmation
+- object_type: measure
+  object_name: Active Students
+  change_type: new_object
+  description: Local measure added to the governed dictionary.
+  impact: available_for_future_reuse
+  validation_status: pending_confirmation
+- object_type: measure
+  object_name: Enrollment Rate
+  change_type: new_object
+  description: Local measure added to the governed dictionary.
+  impact: available_for_future_reuse
+  validation_status: pending_confirmation
+- object_type: relationship
+  object_name: fact_enrollment_demo.ProgramId->dim_program_demo.ProgramId
+  change_type: new_object
+  description: Local relationship added to the governed dictionary.
+  impact: available_for_future_reuse
+  validation_status: pending_confirmation
+pending_actions:
+- Confirm business definitions for draft measures before broader reuse.
+- Review cardinality and filter direction metadata for draft relationships.

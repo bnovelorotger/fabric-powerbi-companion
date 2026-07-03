@@ -1,0 +1,62 @@
+sources:
+  - domain: DemoEnrollment
+    usage_mode: import
+    priority: canonical_curated_domain
+    lineage_hints:
+      - source_system: Starter CSV Demo
+        curated_layer: DemoEnrollment.*
+        downstream_item: demo_enrollment_sandbox_model
+tables:
+  - name: DemoEnrollment.dim_program_demo
+    source_item: StarterLakehouse
+    source_type: Lakehouse
+    column_count: 3
+    documentation_status: catalogued_from_starter_pack
+    selection_reason: matches requested canonical domain
+  - name: DemoEnrollment.fact_enrollment_demo
+    source_item: StarterLakehouse
+    source_type: Lakehouse
+    column_count: 3
+    documentation_status: catalogued_from_starter_pack
+    selection_reason: matches requested canonical domain
+relationships:
+  - from_table: DemoEnrollment.fact_enrollment_demo
+    from_column: ProgramId
+    to_table: DemoEnrollment.dim_program_demo
+    to_column: ProgramId
+    status: active_in_semantic_model
+    confidence: high
+measures:
+  - name: Enrollment Rate
+    status: to_design
+    reuse_first: true
+    notes: Check dictionary and open model before creating
+  - name: Total Enrollments
+    status: to_design
+    reuse_first: true
+    notes: Check dictionary and open model before creating
+  - name: Active Students
+    status: to_design
+    reuse_first: true
+    notes: Check dictionary and open model before creating
+column_visibility_policy:
+  hide_technical_keys: true
+  keep_business_columns_visible: true
+  hide_provider_rate_columns_when_explicit_measures_exist: true
+measure_folders:
+  - Enrollment
+  - Executive
+validation_rules:
+  - Validate dimension uniqueness before creating many-to-one relationships
+  - Avoid many-to-many relationships unless an override reason is documented
+  - Prefer explicit measures over implicit aggregations
+  - Review date table requirements before creating time-intelligence measures
+assumptions:
+  - The PBIX starts from a blank Desktop model.
+  - Import mode is the default for new sandbox builds.
+  - Visuals will be created manually by the user.
+risks:
+  - Live Fabric may diverge from the local catalog and require a reconciliation pass.
+pending_manual_actions:
+  - Review final KPI definitions with business stakeholders.
+  - Build report visuals manually once the technical model is validated.

@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-07-02T16:25:19+00:00",
+  "tmdl_folder": "projects\\demo-enrollment-sandbox\\artifacts\\pbix_snapshot_tmdl",
+  "tables": [
+    {
+      "name": "dim_program_demo",
+      "description": "Starter dimension for model factory validation.",
+      "columns": [
+        "ProgramId",
+        "ProgramName",
+        "Modality"
+      ],
+      "measures": []
+    },
+    {
+      "name": "fact_enrollment_demo",
+      "description": "Starter fact for model factory validation.",
+      "columns": [
+        "ProgramId",
+        "Enrollments",
+        "ActiveStudents"
+      ],
+      "measures": [
+        {
+          "name": "Total Enrollments",
+          "expression": "SUM(fact_enrollment_demo[Enrollments])",
+          "description": "Total enrolled students in the starter fact table.",
+          "display_folder": "Enrollment",
+          "format_string": ""
+        },
+        {
+          "name": "Active Students",
+          "expression": "SUM(fact_enrollment_demo[ActiveStudents])",
+          "description": "Total active students in the starter fact table.",
+          "display_folder": "Enrollment",
+          "format_string": ""
+        },
+        {
+          "name": "Enrollment Rate",
+          "expression": "DIVIDE([Active Students], [Total Enrollments])",
+          "description": "Ratio between active students and enrollments in the starter fact table.",
+          "display_folder": "Enrollment",
+          "format_string": "0.00%"
+        }
+      ]
+    }
+  ],
+  "measures": [
+    {
+      "name": "Total Enrollments",
+      "table": "fact_enrollment_demo",
+      "expression": "SUM(fact_enrollment_demo[Enrollments])",
+      "description": "Total enrolled students in the starter fact table.",
+      "display_folder": "Enrollment",
+      "format_string": ""
+    },
+    {
+      "name": "Active Students",
+      "table": "fact_enrollment_demo",
+      "expression": "SUM(fact_enrollment_demo[ActiveStudents])",
+      "description": "Total active students in the starter fact table.",
+      "display_folder": "Enrollment",
+      "format_string": ""
+    },
+    {
+      "name": "Enrollment Rate",
+      "table": "fact_enrollment_demo",
+      "expression": "DIVIDE([Active Students], [Total Enrollments])",
+      "description": "Ratio between active students and enrollments in the starter fact table.",
+      "display_folder": "Enrollment",
+      "format_string": "0.00%"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "fact_enrollment_demo_ProgramId_dim_program_demo_ProgramId",
+      "from_table": "fact_enrollment_demo",
+      "from_column": "ProgramId",
+      "to_table": "dim_program_demo",
+      "to_column": "ProgramId"
+    }
+  ]
+}

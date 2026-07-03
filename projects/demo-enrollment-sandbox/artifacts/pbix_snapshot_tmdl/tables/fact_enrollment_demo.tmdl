@@ -1,0 +1,15 @@
+/// Starter fact for model factory validation.
+table fact_enrollment_demo
+	column ProgramId
+	column Enrollments
+	column ActiveStudents
+	/// Total enrolled students in the starter fact table.
+	measure 'Total Enrollments' = SUM(fact_enrollment_demo[Enrollments])
+		displayFolder: Enrollment
+	/// Total active students in the starter fact table.
+	measure 'Active Students' = SUM(fact_enrollment_demo[ActiveStudents])
+		displayFolder: Enrollment
+	/// Ratio between active students and enrollments in the starter fact table.
+	measure 'Enrollment Rate' = DIVIDE([Active Students], [Total Enrollments])
+		displayFolder: Enrollment
+		formatString: 0.00%

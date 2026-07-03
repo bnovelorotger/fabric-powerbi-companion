@@ -1,0 +1,18 @@
+semantic_models:
+  - name: demo_enrollment_sandbox_model
+    workspace: Power BI Desktop Local
+    domain: DemoEnrollment
+    fact_tables:
+      - fact_enrollment_demo
+    dimension_tables:
+      - dim_program_demo
+    key_measures:
+      - Total Enrollments
+      - Active Students
+      - Enrollment Rate
+    reports_using_it: []
+    refresh_schedule: manual_demo
+    owner: analytics_ai_core
+    certification_status: sample
+    description: Starter semantic model used to validate the public core workflow.
+    status: published_sample

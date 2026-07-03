@@ -1,0 +1,13 @@
+business_rules:
+  - name: explicit_measures_first
+    rule_type: modeling
+    description: Prefer explicit measures over implicit aggregations.
+    status: active
+  - name: star_schema_preference
+    rule_type: modeling
+    description: Prefer star-schema semantics when introducing new fact and dimension tables.
+    status: active
+  - name: publish_no_secrets
+    rule_type: publication
+    description: No secrets, auth caches, or real workspace identifiers may be committed to the public core.
+    status: active

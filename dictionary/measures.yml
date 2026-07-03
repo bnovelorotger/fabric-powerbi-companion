@@ -1,0 +1,54 @@
+measures:
+  - name: Total Enrollments
+    table: fact_enrollment_demo
+    folder: Enrollment
+    domain: DemoEnrollment
+    business_definition: Total enrolled students in the sample model.
+    technical_definition: Sum of the Enrollments column.
+    dax: SUM(fact_enrollment_demo[Enrollments])
+    dependencies:
+      - fact_enrollment_demo
+    used_for:
+      - starter_demo
+    filters_assumptions: No additional filter assumptions.
+    owner: analytics_ai_core
+    status: published_sample
+    created_by: starter_pack
+    last_modified: "2026-07-01T00:00:00+00:00"
+    validation_status: validated_in_demo
+  - name: Active Students
+    table: fact_enrollment_demo
+    folder: Enrollment
+    domain: DemoEnrollment
+    business_definition: Total active students in the sample model.
+    technical_definition: Sum of the ActiveStudents column.
+    dax: SUM(fact_enrollment_demo[ActiveStudents])
+    dependencies:
+      - fact_enrollment_demo
+    used_for:
+      - starter_demo
+    filters_assumptions: No additional filter assumptions.
+    owner: analytics_ai_core
+    status: published_sample
+    created_by: starter_pack
+    last_modified: "2026-07-01T00:00:00+00:00"
+    validation_status: validated_in_demo
+  - name: Enrollment Rate
+    table: fact_enrollment_demo
+    folder: Enrollment
+    domain: DemoEnrollment
+    business_definition: Ratio between active students and enrollments in the starter demo.
+    technical_definition: DIVIDE([Active Students], [Total Enrollments]).
+    dax: DIVIDE([Active Students], [Total Enrollments])
+    dependencies:
+      - fact_enrollment_demo
+      - Active Students
+      - Total Enrollments
+    used_for:
+      - starter_demo
+    filters_assumptions: Returns BLANK when enrollments are zero.
+    owner: analytics_ai_core
+    status: published_sample
+    created_by: starter_pack
+    last_modified: "2026-07-01T00:00:00+00:00"
+    validation_status: validated_in_demo

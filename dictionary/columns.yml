@@ -1,0 +1,82 @@
+columns:
+  - table: dim_program_demo
+    name: ProgramId
+    display_name: Program ID
+    data_type: int
+    business_meaning: Stable program identifier in the starter demo.
+    technical_meaning: Primary key of dim_program_demo.
+    is_key: true
+    is_hidden: false
+    is_sensitive: false
+    allowed_values: []
+    examples:
+      - 1001
+    status: published_sample
+  - table: dim_program_demo
+    name: ProgramName
+    display_name: Program Name
+    data_type: string
+    business_meaning: Human-readable program name.
+    technical_meaning: Business label for the program.
+    is_key: false
+    is_hidden: false
+    is_sensitive: false
+    allowed_values: []
+    examples:
+      - MBA Online
+    status: published_sample
+  - table: dim_program_demo
+    name: Modality
+    display_name: Modality
+    data_type: string
+    business_meaning: Delivery mode of the program.
+    technical_meaning: Text attribute used for slicing.
+    is_key: false
+    is_hidden: false
+    is_sensitive: false
+    allowed_values:
+      - Online
+      - Hybrid
+      - Onsite
+    examples:
+      - Online
+    status: published_sample
+  - table: fact_enrollment_demo
+    name: ProgramId
+    display_name: Program ID
+    data_type: int
+    business_meaning: Program reference used to relate the fact row to the program dimension.
+    technical_meaning: Foreign key to dim_program_demo.ProgramId.
+    is_key: false
+    is_hidden: false
+    is_sensitive: false
+    allowed_values: []
+    examples:
+      - 1001
+    status: published_sample
+  - table: fact_enrollment_demo
+    name: Enrollments
+    display_name: Enrollments
+    data_type: int
+    business_meaning: Number of enrolled students in the sample.
+    technical_meaning: Numeric fact column aggregated by SUM.
+    is_key: false
+    is_hidden: false
+    is_sensitive: false
+    allowed_values: []
+    examples:
+      - 120
+    status: published_sample
+  - table: fact_enrollment_demo
+    name: ActiveStudents
+    display_name: Active Students
+    data_type: int
+    business_meaning: Number of active students in the sample.
+    technical_meaning: Numeric fact column aggregated by SUM.
+    is_key: false
+    is_hidden: false
+    is_sensitive: false
+    allowed_values: []
+    examples:
+      - 86
+    status: published_sample

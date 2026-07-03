@@ -1,0 +1,18 @@
+environment:
+  owner: your-team
+  default_domain: Starter
+  private_workspace_root: ../analytics_ai_private
+
+fabric:
+  tenant_name: myorg
+  workspace_name: YOUR_FABRIC_WORKSPACE
+  semantic_model_name: YOUR_SEMANTIC_MODEL
+  preferred_item_name: YOUR_LAKEHOUSE_OR_WAREHOUSE
+
+power_bi_desktop:
+  detection_mode: auto
+  prefer_latest_instance: true
+
+skills:
+  install_target: ${HOME}/.codex/skills
+  overwrite_existing: false

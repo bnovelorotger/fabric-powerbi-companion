@@ -1,0 +1,5 @@
+/// Starter dimension for model factory validation.
+table dim_program_demo
+	column ProgramId
+	column ProgramName
+	column Modality

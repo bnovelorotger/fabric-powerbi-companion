@@ -1,0 +1,2 @@
+workspace_name,source_schema,source_table,fk_column,target_schema,target_table,candidate_pk_column,confidence,evidence,relationship_status
+Starter Workspace,DemoEnrollment,fact_enrollment_demo,ProgramId,DemoEnrollment,dim_program_demo,ProgramId,high,starter semantic model,active_in_semantic_model

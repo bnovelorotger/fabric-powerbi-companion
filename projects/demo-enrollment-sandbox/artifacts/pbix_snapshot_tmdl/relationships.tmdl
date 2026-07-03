@@ -1,0 +1,3 @@
+relationship fact_enrollment_demo_ProgramId_dim_program_demo_ProgramId
+	fromColumn: fact_enrollment_demo.ProgramId
+	toColumn: dim_program_demo.ProgramId

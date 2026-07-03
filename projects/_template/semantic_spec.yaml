@@ -1,0 +1,13 @@
+sources: []
+tables: []
+relationships: []
+measures: []
+column_visibility_policy:
+  hide_technical_keys: true
+  keep_business_columns_visible: true
+measure_folders: []
+validation_rules: []
+assumptions: []
+risks: []
+pending_manual_actions:
+  - Build visuals manually in Power BI after technical model validation

@@ -1,0 +1,7 @@
+workspace_name,storage_item_type,storage_item_name,schema_name,table_name,column_ordinal,column_name,data_type,nullable,metadata_json,candidate_role,business_description,business_description_confidence,evidence
+Starter Workspace,Lakehouse,StarterLakehouse,DemoEnrollment,dim_program_demo,1,ProgramId,int,False,{},candidate_key_or_fk,Program identifier,high,starter catalog
+Starter Workspace,Lakehouse,StarterLakehouse,DemoEnrollment,dim_program_demo,2,ProgramName,string,False,{},,Program business name,high,starter catalog
+Starter Workspace,Lakehouse,StarterLakehouse,DemoEnrollment,dim_program_demo,3,Modality,string,True,{},,Program modality,medium,starter catalog
+Starter Workspace,Lakehouse,StarterLakehouse,DemoEnrollment,fact_enrollment_demo,1,ProgramId,int,False,{},candidate_key_or_fk,Foreign key to the program dimension,high,starter catalog
+Starter Workspace,Lakehouse,StarterLakehouse,DemoEnrollment,fact_enrollment_demo,2,Enrollments,int,False,{},measure_or_metric,Enrollment count,high,starter catalog
+Starter Workspace,Lakehouse,StarterLakehouse,DemoEnrollment,fact_enrollment_demo,3,ActiveStudents,int,False,{},measure_or_metric,Active student count,high,starter catalog

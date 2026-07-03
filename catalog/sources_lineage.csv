@@ -1,0 +1,2 @@
+workspace_name,source_system,source_object,ingestion_item,raw_layer,curated_layer,downstream_item,confidence,evidence
+Starter Workspace,Starter CSV Demo,starter sample rows,StarterLakehouse,starter_raw,DemoEnrollment.*,demo_enrollment_sandbox_model,high,starter pack lineage

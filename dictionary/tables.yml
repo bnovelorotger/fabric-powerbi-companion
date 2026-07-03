@@ -1,0 +1,43 @@
+tables:
+  - name: dim_program_demo
+    display_name: Program
+    domain: DemoEnrollment
+    source_system: Starter CSV Demo
+    source_object: dim_program_demo
+    grain: one row per academic program
+    primary_key: ProgramId
+    date_column: ""
+    owner: analytics_ai_core
+    refresh_frequency: manual_demo
+    used_for:
+      - starter_demo
+    status: published_sample
+    description: Starter dimension that represents one program per row.
+    columns:
+      - ProgramId
+      - ProgramName
+      - Modality
+    relationships:
+      - fact_enrollment_demo.ProgramId -> dim_program_demo.ProgramId
+    last_reviewed: "2026-07-01T00:00:00+00:00"
+  - name: fact_enrollment_demo
+    display_name: Enrollment Fact
+    domain: DemoEnrollment
+    source_system: Starter CSV Demo
+    source_object: fact_enrollment_demo
+    grain: one row per program in the starter enrollment sample
+    primary_key: ""
+    date_column: ""
+    owner: analytics_ai_core
+    refresh_frequency: manual_demo
+    used_for:
+      - starter_demo
+    status: published_sample
+    description: Starter fact table used to validate the public workflow.
+    columns:
+      - ProgramId
+      - Enrollments
+      - ActiveStudents
+    relationships:
+      - fact_enrollment_demo.ProgramId -> dim_program_demo.ProgramId
+    last_reviewed: "2026-07-01T00:00:00+00:00"

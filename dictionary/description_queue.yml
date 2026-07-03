@@ -1,0 +1,9 @@
+metadata:
+  queue_name: description_review_queue
+  generated_at_utc: "2026-07-01T00:00:00+00:00"
+  selected_schemas: []
+  selected_tables: []
+  purpose: Draft queue for future description work in the starter pack.
+table_queue: []
+column_queue: []
+manual_review_items: []

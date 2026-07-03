@@ -1,0 +1,15 @@
+project_name: TODO project name
+business_goal: TODO describe the business goal
+domain: TODO business domain
+grain: TODO expected fact grain
+source_domains:
+  - TODO_DOMAIN
+required_kpis:
+  - TODO KPI
+required_dimensions:
+  - TODO Dimension
+requested_pages:
+  - Executive Summary
+constraints:
+  - Prefer governed dictionary definitions before creating new semantic objects
+manual_visuals_by_user: true

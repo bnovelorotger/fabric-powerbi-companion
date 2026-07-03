@@ -1,0 +1,20 @@
+project_name: Demo Enrollment Sandbox
+business_goal: Validate the public workflow over a minimal semantic model before connecting to live Fabric or a live PBIX.
+domain: Enrollment
+grain: one row per program in the starter enrollment fact
+source_domains:
+  - DemoEnrollment
+required_kpis:
+  - Enrollment Rate
+  - Total Enrollments
+  - Active Students
+required_dimensions:
+  - Program
+requested_pages:
+  - Executive Summary
+  - Enrollment Detail
+constraints:
+  - Keep the validation model simple and safe
+  - Prefer star schema naming
+  - Do not create visuals automatically
+manual_visuals_by_user: true

@@ -1,0 +1,6 @@
+patterns:
+  - name: simple_ratio_measure
+    domain: generic
+    purpose: Build ratio measures safely.
+    dax_template: DIVIDE([Numerator Measure], [Denominator Measure])
+    status: active
