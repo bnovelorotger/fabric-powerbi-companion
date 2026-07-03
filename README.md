@@ -1,6 +1,6 @@
-# Analytics AI Core
+# Fabric Power BI Companion
 
-Public core for a Codex-assisted workflow around Microsoft Fabric, Power BI semantic models, TMDL exports, and governed dictionaries.
+Codex-assisted companion for Microsoft Fabric and Power BI projects, with TMDL-first workflows, semantic-model inspection, governed dictionaries, and safe public/private repo separation.
 
 This repository is the shareable layer of the workflow. It is designed to be cloned by another engineer without inheriting private workspaces, client projects, auth caches, or local machine paths.
 
@@ -103,3 +103,7 @@ analytics_ai_core/
 ```powershell
 python .\scripts\workflow_cli.py audit-public-repo
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
