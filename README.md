@@ -1,6 +1,6 @@
 # Fabric Power BI Companion
 
-Codex-assisted companion for Microsoft Fabric and Power BI projects, with TMDL-first workflows, semantic-model inspection, governed dictionaries, and safe public/private repo separation.
+Agentic-first companion for Microsoft Fabric and Power BI projects, with TMDL-first workflows, semantic-model inspection, governed dictionaries, and safe public/private repo separation.
 
 This repository is the shareable layer of the workflow. It is designed to be cloned by another engineer without inheriting private workspaces, client projects, auth caches, or local machine paths.
 
@@ -24,10 +24,29 @@ Keep public core separate from private workspace
 
 ## What it does
 
+- Treats the agent as the primary interface for modeling, governance, and project intake.
 - Helps inspect Power BI Desktop, Fabric, and TMDL-based semantic models.
 - Provides reusable Codex skills for modeling, governance, and project intake.
 - Ships a governed starter dictionary plus a demo project for safe offline validation.
 - Encourages a clean split between a public reusable core and a private operational workspace.
+
+## Agentic-first design
+
+```text
+Primary interface: agent + packaged skills
+Secondary interface: CLI scripts and local docs
+Source of truth: governed dictionary + technical catalog
+Fallback mode: offline TMDL-first when live tools are unavailable
+Safety boundary: public core stays separate from private workspace
+```
+
+This repository is designed so that an agent can:
+
+- start from a business request instead of a manual checklist
+- inspect local or live model state before proposing changes
+- use governed context before inventing semantic definitions
+- degrade safely to offline TMDL workflows when live Fabric or PBIX access is unavailable
+- keep private operational assets out of the public repo by default
 
 ## Typical workflow
 
@@ -35,10 +54,11 @@ Keep public core separate from private workspace
 1. Clone the public core
 2. Install skills and dependencies
 3. Validate environment
-4. Work from TMDL or connect to live PBIX / Fabric
-5. Compare model state against the dictionary
-6. Sync governed metadata safely
-7. Keep private client/workspace artifacts outside the public repo
+4. Start from `/comensemos` or the packaged skills
+5. Work from TMDL or connect to live PBIX / Fabric
+6. Compare model state against the dictionary
+7. Sync governed metadata safely
+8. Keep private client/workspace artifacts outside the public repo
 ```
 
 ## Public vs private
@@ -90,7 +110,13 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install_skills.ps1
 python .\scripts\workflow_cli.py validate-environment
 ```
 
-5. Run the demo workflow:
+5. Use the agent-first entrypoint:
+
+- Start with `/comensemos` for project intake and routing.
+- Use `BI_ENGINEER` for technical model work.
+- Use `BI_GOVERNANCE` after technical changes or model sync.
+
+6. Run the demo workflow:
 
 ```powershell
 python .\scripts\workflow_cli.py validate-brief .\projects\demo-enrollment-sandbox\brief.yaml
@@ -99,16 +125,17 @@ python .\scripts\workflow_cli.py snapshot-from-tmdl .\projects\demo-enrollment-s
 python .\scripts\workflow_cli.py sync-dictionary .\projects\demo-enrollment-sandbox\artifacts\model_snapshot.json .\dictionary demo_enrollment_sandbox_model --domain DemoEnrollment --owner analytics_team
 ```
 
-6. Run the local publication bootstrap:
+7. Run the local publication bootstrap:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap_public_repo.ps1
 ```
 
-7. Create the empty GitHub repository manually and follow [docs/github-bootstrap.md](docs/github-bootstrap.md).
+8. Create the empty GitHub repository manually and follow [docs/github-bootstrap.md](docs/github-bootstrap.md).
 
 ## Supported workflow modes
 
+- Agentic-first: preferred path through packaged skills and governed context
 - Offline / TMDL-first: fully supported from this repository alone
 - Power BI Desktop live inspection: supported when the user has Power BI Desktop open and Codex Power BI MCP tooling available
 - Fabric live inspection: supported when the user has Fabric access and Codex Power BI MCP tooling available
@@ -143,6 +170,8 @@ analytics_ai_core/
 
 - This repo is the public core, not the private workspace.
 - Keep private domain packs, real Fabric exports, and client projects in a separate private repository layered on top of this core.
+- The repo is intentionally agentic-first: the packaged skills are the primary UX, and the CLI is the supporting execution layer.
+- Use [docs/agentic-first.md](docs/agentic-first.md) for the design principles behind that choice.
 - Use [docs/runbook.md](docs/runbook.md) for operational workarounds and known v1 limitations.
 - Use [docs/github-bootstrap.md](docs/github-bootstrap.md) for the first safe publication flow.
 - Before any first public push, run:

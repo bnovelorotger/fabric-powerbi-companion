@@ -18,7 +18,17 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install_skills.ps1
 python .\scripts\workflow_cli.py validate-environment
 ```
 
-## 4. Try the demo
+## 4. Start with the agent
+
+Recommended flow:
+
+- `/comensemos` for project intake
+- `BI_ENGINEER` for semantic model work
+- `BI_GOVERNANCE` for dictionary and changelog updates
+
+Use the CLI directly when you want to validate the repo or run the offline demo step by step.
+
+## 5. Try the demo
 
 ```powershell
 python .\scripts\workflow_cli.py validate-brief .\projects\demo-enrollment-sandbox\brief.yaml
@@ -27,13 +37,13 @@ python .\scripts\workflow_cli.py snapshot-from-tmdl .\projects\demo-enrollment-s
 python .\scripts\workflow_cli.py compare-dictionary .\dictionary .\projects\demo-enrollment-sandbox\artifacts\model_snapshot.json --output .\projects\demo-enrollment-sandbox\logs\dictionary_compare.yaml
 ```
 
-## 5. Prepare the local public repo
+## 6. Prepare the local public repo
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap_public_repo.ps1
 ```
 
-## 6. Publish manually to GitHub
+## 7. Publish manually to GitHub
 
 Follow [github-bootstrap.md](github-bootstrap.md) to:
 
@@ -45,7 +55,7 @@ Follow [github-bootstrap.md](github-bootstrap.md) to:
 
 Never publish the private workspace root. Publish only `analytics_ai_core`.
 
-## 7. Publish checklist
+## 8. Publish checklist
 
 ```powershell
 python .\scripts\workflow_cli.py audit-public-repo
@@ -53,5 +63,6 @@ python .\scripts\workflow_cli.py audit-public-repo
 
 See also:
 
+- [agentic-first.md](agentic-first.md)
 - [publish-checklist.md](publish-checklist.md)
 - [runbook.md](runbook.md)
