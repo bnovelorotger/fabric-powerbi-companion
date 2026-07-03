@@ -4,6 +4,53 @@ Codex-assisted companion for Microsoft Fabric and Power BI projects, with TMDL-f
 
 This repository is the shareable layer of the workflow. It is designed to be cloned by another engineer without inheriting private workspaces, client projects, auth caches, or local machine paths.
 
+## At a glance
+
+```text
+Fabric / Power BI / TMDL
+            |
+            v
+    Inspect and document
+            |
+            v
+   Govern dictionary context
+            |
+            v
+ Bootstrap safe semantic work
+            |
+            v
+Keep public core separate from private workspace
+```
+
+## What it does
+
+- Helps inspect Power BI Desktop, Fabric, and TMDL-based semantic models.
+- Provides reusable Codex skills for modeling, governance, and project intake.
+- Ships a governed starter dictionary plus a demo project for safe offline validation.
+- Encourages a clean split between a public reusable core and a private operational workspace.
+
+## Typical workflow
+
+```text
+1. Clone the public core
+2. Install skills and dependencies
+3. Validate environment
+4. Work from TMDL or connect to live PBIX / Fabric
+5. Compare model state against the dictionary
+6. Sync governed metadata safely
+7. Keep private client/workspace artifacts outside the public repo
+```
+
+## Public vs private
+
+| Public core | Private workspace |
+| --- | --- |
+| Reusable scripts | Real Fabric exports |
+| Packaged skills | Client projects |
+| Starter dictionary | Business-specific rules |
+| Demo TMDL and docs | Auth state and caches |
+| Safe publication tooling | Sensitive operational data |
+
 ## What is included
 
 - Reusable model-factory scripts under `scripts/model_factory/`
