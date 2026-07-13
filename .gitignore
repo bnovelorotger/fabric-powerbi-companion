@@ -24,6 +24,8 @@ output/
 artifacts/tmp/
 projects/*/artifacts/live_export/
 projects/*/logs/*.local.*
+# Executive report packs may contain internal objectives, model names and data snapshots.
+projects/*/executive_reports/
 
 # OS / editor
 .DS_Store

@@ -50,6 +50,28 @@ Fallback:
 
 - Use a clean virtual environment and reinstall dependencies there.
 
+## 2b. `executive-report-builder` fails exporting PDF
+
+Symptom:
+
+- `export_pdf.py` fails to launch Chromium
+- `preflight.py` reports Playwright browser issues
+
+Likely cause:
+
+- Python dependencies are installed but the Playwright browser bundle was not installed yet
+
+Recommended fix:
+
+```powershell
+python -m playwright install chromium
+python .\skills\executive-report-builder\scripts\preflight.py
+```
+
+Fallback:
+
+- Render HTML only and postpone PDF export until Chromium is installed.
+
 ## 3. Skills do not appear after installation
 
 Symptom:

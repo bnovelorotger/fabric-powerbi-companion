@@ -1,0 +1,4 @@
+interface:
+  display_name: "EXECUTIVE_REPORT_BUILDER"
+  short_description: "Convierte datos PBIX en informes ejecutivos"
+  default_prompt: "Usa $executive-report-builder para crear un informe ejecutivo trazable desde el PBIX abierto."

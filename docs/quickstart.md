@@ -6,6 +6,12 @@
 python -m pip install -r requirements.txt
 ```
 
+If you want to use `executive-report-builder`, also install Chromium for Playwright:
+
+```powershell
+python -m playwright install chromium
+```
+
 ## 2. Install skills
 
 ```powershell

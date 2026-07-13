@@ -11,6 +11,8 @@ Keep the following in a separate private repository:
 - auth state
 - local caches
 - one-off operational scripts
+- generated executive-report packs and their data snapshots
+- client logos, photographs, proprietary fonts, report themes, and organization-specific terminology
 
 Recommended shape:
 

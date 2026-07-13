@@ -18,6 +18,14 @@ python .\scripts\workflow_cli.py audit-public-repo
    - real workspace names
    - Fabric endpoints
    - oversized files
+   - client branding, logos, photographs, proprietary fonts, PBIX names, measure names, and database identifiers
+
+   Generated executive-report packs must remain ignored. Verify with:
+
+```powershell
+git check-ignore -v .\projects\example\executive_reports\quarterly\brief.yaml
+git check-ignore -v .\projects\example\executive_reports\quarterly\data\snapshot.json
+```
 
 6. Verify the demo still runs offline from TMDL:
 
@@ -52,3 +60,4 @@ Stop and fix the repo before any push if you find:
 - private snapshots, catalogs, or TMDL exports
 - `.env`, `auth.json`, `cache.bin`, or similar auth artifacts
 - files copied from the private workspace that are not needed for the public core
+- generated `executive_reports/` packs, including briefs, snapshots, narrative, HTML, PDF, QA, and organization branding

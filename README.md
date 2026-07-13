@@ -98,6 +98,12 @@ This repository is designed so that an agent can:
 python -m pip install -r requirements.txt
 ```
 
+If you plan to use `executive-report-builder` for HTML/PDF exports, install the bundled browser once:
+
+```powershell
+python -m playwright install chromium
+```
+
 3. Install the packaged skills:
 
 ```powershell
