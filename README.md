@@ -175,6 +175,7 @@ analytics_ai_core/
 ## Notes
 
 - This repo is the public core, not the private workspace.
+- See [CHANGELOG.md](CHANGELOG.md) for release history and compatibility notes.
 - Keep private domain packs, real Fabric exports, and client projects in a separate private repository layered on top of this core.
 - The repo is intentionally agentic-first: the packaged skills are the primary UX, and the CLI is the supporting execution layer.
 - Use [docs/agentic-first.md](docs/agentic-first.md) for the design principles behind that choice.
